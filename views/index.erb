@@ -1,0 +1,12 @@
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div>
+      <% files.each_with_index do |file, i| %>
+        <img id=<%= "img-#{i}" %> src="/img/<%= file %>" alt="<%= file %>" />
+      <% end %>
+    </div>
+  </body>
+</html>
