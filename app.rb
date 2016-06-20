@@ -11,5 +11,7 @@ end
 
 get '/img/*' do
   filename = params['splat'][0]
+  # [1..-1] is used to jump the leading '.' such as in '.jpg'.
+  content_type "image/#{File.extname(filename)[1..-1]}"
   File.read("/#{filename}")
 end
