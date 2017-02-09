@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <% files.each_with_index do |file, i| %>
+        <img id=<%= "img-#{i}" %> src="/img/<%= file %>" alt="<%= file %>" style="width: 100%"/>
+        <span><%= "#{i + 1} / #{files.size}" %></span>
+      <% end %>
+    </div>
+  </body>
+</html>
