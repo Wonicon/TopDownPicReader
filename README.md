@@ -2,20 +2,35 @@
 
 I can hardly find a manga reader in Linux which can arrange pictures vertically.
 
-## Build
+## Prerequisites
 
 ```
-sudo apt-get install ruby
-sudo gem install sinatra
+apt-get install ruby
+gem install sinatra
 ```
 
 ## Usage
 
 ```
-ruby app.rb
+cd /path/to/your/root/dir/
+ruby /path/to/this/repo/app.rb
 ```
 
-In the browser, type the url `http://127.0.0.1:4567/dir/<absolute-path-to-the-pic-dir>`.
-
-`4567` is the port number the application server listens on.
+In the browser, type the url `http://127.0.0.1:4567`.
+`4567` is the default port number that a sinatra app listens on.
 It may differ, but will be printed in the terminal as soon as the server starts running.
+
+## Constraints
+
+The root dir for the site should match the structure as follows:
+
+```
+.
+└── <manga-code>
+    ├── <img-filename-01>
+    ├── <img-filename-02>
+    ├── ...
+    └── title
+```
+
+The file `title` contains the name of the manga, which is always not suitable to appear in path.
